@@ -1,16 +1,39 @@
 package org.pikmintea.endpoint
+import imgui.ImGui
+import imgui.app.Application
+import imgui.app.Configuration
+import org.pikmintea.endpoint.data.GameData
+import org.pikmintea.endpoint.gui.GameGUI
+import java.math.BigInteger
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+class Endpoint : Application() {
+
+
+
+    override fun configure(config: Configuration) {
+        config.title = "ENDPOINT"
+        config.width = 1920
+        config.height = 1080
+
     }
+    fun RunOnce()
+    {
+        _data = GameData()
+
+    }
+
+    override fun process() {
+
+        GameGUI().render(data = _data)
+    }
+
+
+
+    }
+
+fun main() {
+    Application.launch(Endpoint())
+    RunOnce();
 }
+

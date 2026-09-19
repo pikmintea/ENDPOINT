@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.4.10"
+    application
 }
 
 group = "org.pikmintea.endpoint"
@@ -10,13 +11,13 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    implementation("io.github.spair:imgui-java-app:1.92.7.1")
+
 }
 
 kotlin {
     jvmToolchain(25)
 }
-
-tasks.test {
-    useJUnitPlatform()
+application {
+    mainClass.set("org.pikmintea.endpoint.MainKt")
 }
