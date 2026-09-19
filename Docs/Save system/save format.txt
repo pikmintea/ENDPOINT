@@ -1,0 +1,5 @@
+for the save system, a custom save system has been made.
+it save in a save flowder, the dir contain multiple files, including bits.bin with is a TXT file containing inly the bit number, we also have a json file with for now handle everytinhg,
+the json file also have the hash of every files and of the hash.bin file with is also a TXT file containing the hash of every files, but not himself, this is a fallback
+for the json files, the hashes are in two parts and containing first the hash of the files and then at the segond part separated by [|ΔT|] and then tehre is the date of the save.
+also there is a metadata.bin file containing the version of the save system and version fo the app and the hash of hash.bin
