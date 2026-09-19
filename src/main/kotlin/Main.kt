@@ -8,7 +8,8 @@ import java.math.BigInteger
 
 
 class Endpoint : Application() {
-
+private val _gamedata = GameData()
+private val _gamegui = GameGUI()
 
 
     override fun configure(config: Configuration) {
@@ -17,15 +18,11 @@ class Endpoint : Application() {
         config.height = 1080
 
     }
-    fun RunOnce()
-    {
-        _data = GameData()
-
-    }
 
     override fun process() {
 
-        GameGUI().render(data = _data)
+_gamegui.render(_data = _gamedata);
+
     }
 
 
@@ -34,6 +31,6 @@ class Endpoint : Application() {
 
 fun main() {
     Application.launch(Endpoint())
-    RunOnce();
+
 }
 

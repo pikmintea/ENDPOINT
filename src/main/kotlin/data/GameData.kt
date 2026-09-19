@@ -4,6 +4,8 @@ import java.math.BigInteger
 
 class GameData {
 
-    public  var points = BigInteger.ZERO
+    public  var bits = BigInteger.ZERO
+
+
 
 }
